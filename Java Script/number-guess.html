@@ -1,0 +1,67 @@
+<style>
+    * {font-family:Quicksand}
+    #result{
+        background-color:beige;
+        padding:5px; width:300px;
+        border-radius:13px; 
+        text-align: center;}
+
+    input { 
+        margin-top:50px; 
+        width:245px;
+        border-radius:11px;
+        height:43px;
+        padding:10px; 
+        text-align: center; }
+
+    button {
+        margin-top:20px;
+        padding: 4px; 
+        border-radius:17px;
+        width:70px;}
+
+    h1 {border-bottom:1px solid rgb(168, 167, 167);}
+</style>
+
+<center>
+    <h1>Guess Number From 1-10</h1>
+<input type="number" id="input" placeholder="Enter Your Guess"> <br>
+<button onclick="check()">Check</button>
+<h2 id="result">Result :</h2>
+</center>
+
+
+<script>
+
+let input=document.getElementById("input")
+let result=document.getElementById("result")
+let number=Math.floor(Math.random()*10+1)
+console.log(number)
+
+function check()
+{ userInput=input.value
+
+if(number==userInput)
+  { result.textContent="Result :"+"Correct" 
+    //style
+    result.style.backgroundColor="aqua"
+    result.style.padding="5px"
+    result.style.borderRadius="13px"
+    result.style.width="300px"
+    result.style.textAlign="center"
+    alert("You Won !")
+  }
+
+else {
+    result.textContent="Result :"+"Wrong"
+    //style
+    result.style.backgroundColor="tomato"
+    result.style.padding="5px"
+    result.style.borderRadius="13px"
+    result.style.width="300px"
+    result.style.textAlign="center"
+  }
+
+}
+
+</script>
